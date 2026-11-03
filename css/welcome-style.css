@@ -1,0 +1,9 @@
+/* Welcome page-specific styles */
+/* All core layout, card, heading, body, accent-panel, PS, and signature
+   styles come from the shared utilities in style.css.
+   This file is reserved for welcome-page-only overrides. */
+
+/* Slightly larger gap between signature and accent panel content */
+.page-accent-panel .page-signature {
+  margin-top: 1rem;
+}

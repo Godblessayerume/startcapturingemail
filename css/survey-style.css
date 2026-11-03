@@ -1,0 +1,167 @@
+/* Survey page-specific styles */
+
+/* CTA callout box */
+.survey-cta {
+  background: var(--brand-dark);
+  border: 1px solid var(--brand-gold);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.survey-cta__text {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.45rem);
+  color: var(--brand-white);
+  font-weight: 600;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.survey-cta__text-strong {
+  color: var(--brand-gold) !important;
+}
+
+/* Tally embed container */
+.survey-embed {
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.survey-embed iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+/* Next steps section */
+.survey-next-steps {
+  margin-top: 0.5rem;
+}
+
+.survey-next-steps__heading {
+  font-family: Anton, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(18, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+/* Activity feed */
+.activity-feed {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  padding: 20px 24px;
+  max-width: 380px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 32px;
+  position: relative;
+}
+
+.activity-text {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: shuffle 12s ease-in-out infinite;
+}
+
+.activity-text:nth-child(1) { animation-delay: 0s; }
+.activity-text:nth-child(2) { animation-delay: 2s; }
+.activity-text:nth-child(3) { animation-delay: 4s; }
+.activity-text:nth-child(4) { animation-delay: 6s; }
+.activity-text:nth-child(5) { animation-delay: 8s; }
+.activity-text:nth-child(6) { animation-delay: 10s; }
+
+@keyframes shuffle {
+  0%   { opacity: 0; transform: translateY(8px); }
+  2%   { opacity: 1; transform: translateY(0); }
+  15%  { opacity: 1; transform: translateY(0); }
+  17%  { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 0; }
+}
+
+.task-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--brand-dark);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(49, 39, 20, 0.4);
+  flex-shrink: 0;
+}
+
+.task-action {
+  color: var(--brand-gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.task-target {
+  color: var(--brand-dark);
+  font-size: 0.95rem;
+}
+
+/* Countdown timer */
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.countdown-value {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--brand-dark);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.2ch;
+  text-align: center;
+  animation: cd-tick 1s ease-in-out infinite;
+}
+
+.countdown-label {
+  font-family: Manrope, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brand-gold);
+}
+
+.countdown-sep {
+  font-family: Anton, sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: rgba(18, 0, 0, 0.2);
+  line-height: 1;
+  padding-bottom: 1.25rem;
+}
+
+@keyframes cd-tick {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@media (max-width: 640px) {
+  /* No overrides needed right now */
+}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete a 30-second survey to claim your free 5-minute lead-generation funnel audit from Lead-Capture Launchpad by Godbless Ayerume." />
+  <title>Almost there! | Lead-Capture Launchpad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/survey-style.css" />
+  <script src="https://tally.so/widgets/embed.js"></script>
+  <link rel="icon" type="image/png" href="./images/product-box.png" />
+</head>
+<body class="font-manrope page-wrapper">
+
+  <div class="page-glow"></div>
+
+  <div class="page-card">
+    <div class="page-card__inner">
+
+      <h1 class="page-heading">YOU'RE ALMOST THERE.</h1>
+
+      <p class="survey-page-body">You'll get step #1 right in your inbox in...</p>
+
+      <div class="countdown-timer" id="countdown">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-minutes">05</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <h2 class="survey-page-subheading">In the meantime... can you help me help you?</h2>
+
+      <p class="page-body">I'm building a mini-course to help everyone in the Lead-Capture Launchpad (which you're now part of) level up faster.</p>
+
+      <p class="page-body">But I want to make sure this mini-course is as valuable and relevant as possible to <strong>you</strong>.</p>
+
+      <p class="page-body">So can you take 30 seconds to answer 4 quick questions below?</p>
+
+      <div class="survey-cta">
+        <p class="survey-cta__text survey-cta__text-strong">As a thank you for sharing your thoughts</p>
+        <p class="survey-cta__text">I'll do a 5-minute audit of your existing opt-in page, lead magnet positioning and share a personalized suggestion to improve it!</p>
+        <p class="survey-cta__text" 
+        style="margin-top: 0.75rem;">I only do <strong class="survey-cta__text-strong">10 audits per month</strong> on a first-come, first-served basis.</p>
+      </div>
+
+      <div class="survey-embed">
+        <iframe data-tally-src="https://tally.so/embed/44kMld?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1" loading="lazy" width="100%" height="375" frameborder="0" marginheight="0" marginwidth="0" title="Survey"></iframe>
+      </div>
+
+      <div class="survey-next-steps">
+        <h3 class="survey-next-steps__heading">What happens next</h3>
+        <div class="activity-feed">
+          <div class="activity-item">
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Reviewing</span>
+              <span class="task-target">your response</span>
+            </span>
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Auditing</span>
+              <span class="task-target">your funnel</span>
+            </span>
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Delivering</span>
+              <span class="task-target">audit feedback</span>
+            </span>
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Booking</span>
+              <span class="task-target">your audit slot</span>
+            </span>
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Sharing</span>
+              <span class="task-target">next steps</span>
+            </span>
+            <span class="activity-text">
+              <span class="task-dot"></span>
+              <span class="task-action">Helping</span>
+              <span class="task-target">you grow</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Tally embed loader
+    if (typeof Tally !== "undefined") {
+      Tally.loadEmbeds();
+    } else {
+      document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (iframe) {
+        iframe.src = iframe.dataset.tallySrc;
+      });
+    }
+
+    // Countdown timer (5 minutes)
+    (function () {
+      var total = 5 * 60;
+      var hrEl = document.getElementById("cd-hours");
+      var minEl = document.getElementById("cd-minutes");
+      var secEl = document.getElementById("cd-seconds");
+
+      function pad(n) { return n < 10 ? "0" + n : n; }
+
+      function tick() {
+        if (total <= 0) {
+          hrEl.textContent = "00";
+          minEl.textContent = "00";
+          secEl.textContent = "00";
+          return;
+        }
+        total--;
+        
+        var h = Math.floor(total / 3600);
+        var m = Math.floor((total % 3600) / 60);
+        var s = total % 60;
+        
+        hrEl.textContent = pad(h);
+        minEl.textContent = pad(m);
+        secEl.textContent = pad(s);
+      }
+
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>
