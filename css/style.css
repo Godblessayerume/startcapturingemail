@@ -614,6 +614,7 @@ body {
         var(--brand-white) 0%,
         var(--brand-gold) 100%
       );
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
